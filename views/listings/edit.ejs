@@ -1,0 +1,88 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h3>Edit your Listing</h3>
+    <form
+      method="post"
+      action="/listings/<%= findListing._id  %>?_method=put"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          type="text"
+          name="listing[title]"
+          value="<%= findListing.title  %>"
+          class="form-control"
+          required
+        />
+        <div class="valid-feedback">Title looks good</div>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          name="listing[description]"
+          rows="10"
+          cols="50"
+          class="form-control"
+          required
+        >
+<%= findListing.description  %></textarea
+        >
+        <div class="invalid-feedback">Please enter a short description.</div>
+      </div>
+      <div class="mb-3">
+        Original Listing Image <br>
+        <img src="<%= originalImageUrl%>" height="300px" width="350px" alt="">
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload New Image</label>
+        <input
+          type="file"
+          name="listing[image]"
+          class="form-control"
+        />
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            type="number"
+            name="listing[price]"
+            class="form-control"
+            value="<%= findListing.price %>"
+            required
+          />
+          <div class="invalid-feedback">price should be valid</div>
+        </div>
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country</label>
+          <input
+            type="text"
+            name="listing[country]"
+            class="form-control"
+            value="<%= findListing.country  %> "
+            required
+          />
+          <div class="invalid-feedback">Country name should valid.</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          type="text"
+          name="listing[location]"
+          class="form-control"
+          required
+          value="<%= findListing.location  %> "
+        />
+        <div class="invalid-feedback">location name should valid.</div>
+      </div>
+      <button type="submit" class="btn btn-dark edit-btn mt-3 mb-5">
+        Edit
+      </button>
+    </form>
+  </div>
+</div>

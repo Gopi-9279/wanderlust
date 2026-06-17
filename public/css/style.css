@@ -36,37 +36,112 @@ body {
     background-color: white;
 }
 
-.f-info-links a {
-    text-decoration: none;
-    color: #222222;
+.site-footer {
+    background: #181818;
+    color: #f7f7f7;
+    margin-top: 3rem;
 }
 
-.f-info-links a:hover {
-    text-decoration: underline;
-}
-
-.f-info-links,
-.f-info-socials,
-.f-info-brand {
-    width: 100%;
-    display: flex;
+.footer-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 1.5rem;
     align-items: center;
-    justify-content: center;
 }
 
-.f-info-socials i {
-    margin-right: 1rem;
-    font-size: 1.2rem;
+.footer-logo {
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-.f-info {
-    height: 8rem;
-    background-color: #ebebeb;
+.footer-logo i {
+    color: #fe424d;
+    font-size: 1.6rem;
+}
+
+.footer-brand p {
+    color: #cfcfcf;
+    margin: 0.75rem 0 0;
+    max-width: 26rem;
+    line-height: 1.6;
+}
+
+.footer-links {
     display: flex;
     flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
     justify-content: center;
-    align-items: space-evenly;
+}
+
+.footer-links a {
+    color: #e7e7e7;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    color: #fe424d;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.footer-socials a {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-socials a:hover {
+    background-color: #fe424d;
+    border-color: #fe424d;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
     text-align: center;
+}
+
+.footer-bottom p {
+    color: #bdbdbd;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-brand p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
 }
 
 /* cards */

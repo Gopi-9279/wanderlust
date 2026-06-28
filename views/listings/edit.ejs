@@ -1,6 +1,6 @@
 <% layout("/layouts/boilerplate.ejs") %>
 <div class="row mt-3">
-  <div class="col-8 offset-2">
+  <div class="col-12 col-md-8 offset-md-2">
     <h3>Edit your Listing</h3>
     <form
       method="post"
@@ -35,7 +35,7 @@
       </div>
       <div class="mb-3">
         Original Listing Image <br>
-        <img src="<%= originalImageUrl%>" height="300px" width="350px" alt="">
+        <img src="<%= originalImageUrl%>" class="edit-preview-img" alt="Original listing image">
       </div>
       <div class="mb-3">
         <label for="image" class="form-label">Upload New Image</label>

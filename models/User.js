@@ -6,7 +6,9 @@ const userSchema = new Schema({
     email : {
         type : String,
         required : true,
-    }
+    },
+        googleId: String,
+        displayName: String,
 });
 
 userSchema.plugin(passportLocalMongoose);
